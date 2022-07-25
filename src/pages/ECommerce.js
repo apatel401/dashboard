@@ -4,7 +4,7 @@ import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 
 // eslint-disable-next-line no-unused-vars
-import { Stacked, Pie, Button, SparkLine } from "../components/";
+import { StackedChart , Pie, Button, SparkLine } from "../components";
 
 import {
   SparklineAreaData,
@@ -60,11 +60,13 @@ const Ecommerce = () => {
                 </button>
                 <p className="mt-3">
                   <span className="text-lg font-semibold">{item.amount}</span>
-                  <span className={`text-sm text-${item.pcColor} ml-2`}>{item.percentage}</span>
+                  <span className={`text-sm text-${item.pcColor} ml-2`}>
+                    {item.percentage}
+                  </span>
                 </p>
                 <p className="text-sm text-gray-400 mt-1">{item.title}</p>
               </div>
-            )
+            );
           })}
         </div>
         <div className="flex flex-wrap gap-10 justify-center">
@@ -84,7 +86,6 @@ const Ecommerce = () => {
                   </span>
                   <span>Budget</span>
                 </p>
-
               </div>
             </div>
             <div className="flex mt-10 gap-2 flex-wrap justify-center">
@@ -92,20 +93,38 @@ const Ecommerce = () => {
                 <div className="mt-8">
                   <p>
                     <span className="text-3xl font-semibold">$98000</span>
-                    <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs">23%</span>
+                    <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs">
+                      23%
+                    </span>
                   </p>
-                  <p className="text-gray-500 mt-1">
-                    Budget
-                  </p>
+                  <p className="text-gray-500 mt-1">Budget</p>
                 </div>
                 <div>
                   <p>
                     <span className="text-3xl font-semibold">$48000</span>
                   </p>
-                  <p className="text-gray-500 mt-1">
-                    Expense
-                  </p>
+                  <p className="text-gray-500 mt-1">Expense</p>
                 </div>
+                <div className="mt-5">
+                  <SparkLine
+                    currentColor="blue"
+                    id="line-sparkline"
+                    type="Line"
+                    height="80px"
+                    width="250px"
+                    data={SparklineAreaData}
+                    color="blue"
+                  />
+                </div>
+                <div className="mt-10">
+                  <Button color="white"
+                  bgColor="blue"
+                  text="Download Report"
+                  borderRadius="10px" />
+                </div>
+              </div>
+              <div>
+                <StackedChart width="320px" height="360px" />
               </div>
             </div>
           </div>
