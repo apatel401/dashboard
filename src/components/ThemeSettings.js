@@ -16,9 +16,9 @@ const ThemeSettings = () => {
           <button
             type="button"
             className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
-            onClick={() => {}}
+            onClick={() => setThemeSettings(false)}
             style={{ color: "rgb(153, 171, 180)", borderRadius: "50%" }}
-          ></button>
+          > <MdOutlineCancel /> </button>
         </div>
         <div className="flex-col border-t-1 border-color p-4 ml-4">
           <p className="text-lg font-semibold">Theme Options</p>
@@ -26,10 +26,10 @@ const ThemeSettings = () => {
             <input
               type="radio"
               name="theme"
-              value="light"
+              value="Light"
               className="cursor-pointer"
-              onChange={() => {}}
-              checked={true}
+              onChange={setMode}
+              checked={currentMode === 'Light'}
             />
             <label htmlFor="light" className="ml-2 text-md cursor-pointer">
               Light
@@ -39,10 +39,10 @@ const ThemeSettings = () => {
             <input
               type="radio"
               name="theme"
-              value="dark"
+              value="Dark"
               className="cursor-pointer"
-              onChange={() => {}}
-              checked={false}
+              onChange={setMode}
+              checked={currentMode === 'Dark'}
             />
             <label htmlFor="dark" className="ml-2 text-md cursor-pointer">
               Dark
@@ -65,14 +65,9 @@ const ThemeSettings = () => {
                     type="button"
                     className="h-10 w-10 rounded-full cursor-pointer"
                     style={{ backgroundColor: item.color }}
-                    onClick={() => {}}
+                    onClick={() => setColor(item.color)}
                   >
-                    {/* <BsCheck className={`ml-2 text-2xl text-white ${item.color === currentColor ? "block" : "hidden"}`} /> */}
-                    <BsCheck
-                      className={`ml-2 text-2xl text-white ${
-                        false ? "block" : "hidden"
-                      }`}
-                    />
+                    <BsCheck className={`ml-2 text-2xl text-white ${item.color === currentColor ? "block" : "hidden"}`} />
                   </button>
                 </div>
               </TooltipComponent>
