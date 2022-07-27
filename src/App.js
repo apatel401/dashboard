@@ -28,10 +28,10 @@ import { useStateContext } from "./contexts/ContextProvider";
 import "./App.css";
 
 const App = () => {
-  const { activeMenu, themeSettings, setThemeSettings, currentColor } = useStateContext();
+  const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode } = useStateContext();
 
   return (
-    <div>
+    <div className={currentMode === 'Light' ? '' : 'dark' }>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
@@ -56,7 +56,7 @@ const App = () => {
             </div>
           )}
           <div
-            className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${
+            className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${
               activeMenu ? "md:ml-72" : "flex-2"
             } `}
           >
@@ -83,9 +83,8 @@ const App = () => {
 
               {/* charts  */}
               <Route path="/line" element={<Line />} />
-              <Route path="/area" element={<Editor />} />
-              <Route path="/pie" element={<Pie />} />
               <Route path="/area" element={<Area />} />
+              <Route path="/pie" element={<Pie />} />
               <Route path="/bar" element={<Bar />} />
               <Route path="/financial" element={<Financial />} />
               <Route path="/color-mapping" element={<ColorMapping />} />
