@@ -5,7 +5,7 @@ import { ChartsHeader } from '../../components';
 import { areaCustomSeries, areaPrimaryXAxis, areaPrimaryYAxis } from '../../data/dummy';
 import { useStateContext } from '../../contexts/ContextProvider';
 
-const Area = () => {
+export default function Area () {
   const { currentMode } = useStateContext();
 
   return (
@@ -30,5 +30,3 @@ const Area = () => {
     </div>
   );
 };
-
-export default Area;
