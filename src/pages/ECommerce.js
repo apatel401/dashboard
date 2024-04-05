@@ -1,6 +1,5 @@
 /* eslint-disable array-callback-return */
 import React from "react";
-import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 
 // eslint-disable-next-line no-unused-vars
@@ -8,7 +7,6 @@ import { StackedChart , Pie, Button, SparkLine } from "../components";
 
 import {
   SparklineAreaData,
-  ecomPieChartData,
   earningData,
 } from "../data/dummy";
 

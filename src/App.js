@@ -1,11 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
-import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
+import { Navbar, Sidebar, ThemeSettings } from "./components";
 import {
-  Ecommerce,
   Orders,
   Calendar,
   Employees,
@@ -21,6 +20,7 @@ import {
   ColorPicker,
   ColorMapping,
   Editor,
+  ECommerce
 } from "./pages";
 
 import { useStateContext } from "./contexts/ContextProvider";
@@ -67,8 +67,8 @@ const App = () => {
             {themeSettings && <ThemeSettings />}
             <Routes>
               {/* Dashboard  */}
-              <Route path="/" element={<Ecommerce />} />
-              <Route path="/ecommerce" element={<Ecommerce />} />
+              <Route path="/" element={<ECommerce />} />
+              <Route path="/ecommerce" element={<ECommerce />} />
 
               {/* Pages  */}
               <Route path="/orders" element={<Orders />} />

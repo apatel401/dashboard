@@ -38,6 +38,7 @@ const Navbar = () => {
     handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -78,10 +79,10 @@ const Navbar = () => {
           </div>
         </TooltipComponent>
 
-        {isClicked.cart && (<Cart />)}
-        {isClicked.chat && (<Chat />)}
-        {isClicked.notification && (<Notification />)}
-        {isClicked.userProfile && (<UserProfile />)}
+        {isClicked?.cart && (<Cart />)}
+        {isClicked?.chat && (<Chat />)}
+        {isClicked?.notification && (<Notification />)}
+        {isClicked?.userProfile && (<UserProfile />)}
       </div>
     </div>
   );
