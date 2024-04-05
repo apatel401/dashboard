@@ -47,6 +47,7 @@ const Navbar = () => {
     } else {
       setActiveMenu(true);
     }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenSize]);
 
   const handleActiveMenu = () => setActiveMenu(!activeMenu);

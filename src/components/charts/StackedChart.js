@@ -1,7 +1,6 @@
 import React from "react";
 import {
   ChartComponent,
-  SeriesCollection,
   SeriesDirective,
   Inject,
   Legend,
